@@ -27,7 +27,7 @@ public class Main {
                     String colour = scanner.nextLine();
                     int year = 0;
                     do {
-                        System.out.println("Podaj rok produkcji");
+                        System.out.println("Podaj rok produkcji (od 1990 do 2020)");
                         String syear = scanner.nextLine();
                         year = Integer.parseInt(syear);
                     }
@@ -74,6 +74,13 @@ public class Main {
                     break;
                 } else if (wybor.equalsIgnoreCase("aktualizuj")) {
                     Transaction transaction = session.beginTransaction();
+                    System.out.println("Podaj id pojazdu");
+                    String id = scanner.nextLine();
+                    long carId = Long.parseLong(id);
+                    Vehicle carCheck = session.get(Vehicle.class, carId);
+                    if (carCheck == null){
+                        System.err.println("Nie ma takiego pojazdu");
+                        break;}
                     System.out.println("Podaj marke");
                     String brand = scanner.nextLine();
                     System.out.println("Podaj moc silnika");
@@ -83,7 +90,7 @@ public class Main {
                     String colour = scanner.nextLine();
                     int year = 0;
                     do {
-                        System.out.println("Podaj rok produkcji");
+                        System.out.println("Podaj rok produkcji (od 1990 do 2020)");
                         String syear = scanner.nextLine();
                         year = Integer.parseInt(syear);
                     }
@@ -91,6 +98,7 @@ public class Main {
                     System.out.println("Czy ma naped elektryczny (true/false)");
                     boolean el = scanner.nextBoolean();
                     Vehicle vehicle = Vehicle.builder()
+                            .id(carId)
                             .brand(brand)
                             .horsepower(hp)
                             .colour(colour)
