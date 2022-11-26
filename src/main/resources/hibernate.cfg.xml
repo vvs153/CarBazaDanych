@@ -12,6 +12,6 @@
 
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <mapping class = "homework.Car"/>
+        <mapping class = "homework.Vehicle"/>
     </session-factory>
 </hibernate-configuration>
