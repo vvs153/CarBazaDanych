@@ -58,9 +58,7 @@ public class Main {
                 } else if (wybor.equalsIgnoreCase("lista")) {
                     TypedQuery<Vehicle> zapytanie = session.createQuery("from Vehicle", Vehicle.class);
                     List<Vehicle> vehicleList = zapytanie.getResultList();
-                    for (Vehicle vehicle : vehicleList) {
-                        System.out.println(vehicle);
-                    }
+                    vehicleList.forEach(System.out::println);
                     break;
                 } else if (wybor.equalsIgnoreCase("szukaj")) {
                     System.out.println("Podaj id pojazdu");
