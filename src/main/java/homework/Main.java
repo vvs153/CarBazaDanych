@@ -110,12 +110,7 @@ public class Main {
                     break;
                 }
 
-            } while (!wybor.equalsIgnoreCase("dodaj")
-                    || !wybor.equalsIgnoreCase("usun")
-                    || !wybor.equalsIgnoreCase("lista")
-                    || !wybor.equalsIgnoreCase("aktualuzuj")
-                    || !wybor.equalsIgnoreCase("szukaj")
-                    || !wybor.equalsIgnoreCase("wyjdz"));
+            } while (true);
         } catch (Exception e) {
             System.err.println("blad bazy: " + e);
 
